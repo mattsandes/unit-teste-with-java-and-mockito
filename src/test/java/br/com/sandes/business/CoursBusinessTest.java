@@ -5,7 +5,7 @@ import br.com.sandes.service.stubs.CourseServiceStub;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class CoursBusinessTest {
+class CourseBusinessTest {
 
     @Test
     void TestCoursesRelatedToSpring_When_UsingAStub(){
