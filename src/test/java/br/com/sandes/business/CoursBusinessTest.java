@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CourseBusinessTest {
 
     @Test
-    void TestCoursesRelatedToSpring_When_UsingAStub(){
+    void testCoursesRelatedToSpring_When_UsingAStub(){
         //Given (Arrange)
         CourseService stubService = new CourseServiceStub();
         CourseBusiness business = new CourseBusiness(stubService);
@@ -21,7 +21,7 @@ class CourseBusinessTest {
     }
 
     @Test
-    void TestCoursesRelatedToSpring_When_UsingAFooBarStudent(){
+    void testCoursesRelatedToSpring_When_UsingAFooBarStudent(){
         //Given (Arrange)
         CourseService stubService = new CourseServiceStub();
         CourseBusiness business = new CourseBusiness(stubService);
