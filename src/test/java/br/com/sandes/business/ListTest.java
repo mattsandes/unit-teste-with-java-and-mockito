@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -79,5 +80,22 @@ public class ListTest {
         //Essa assertion falha por conta que esse comportamento não foi
         //mockada
         //assertEquals("Sandes", list.get(15));
+    }
+
+    //teste para mockar exceptions com Mockito;
+    @Test
+    void testMockingList_When_ThrowsAnException(){
+
+        //Given (Arrange)
+        var list = mock(List.class);
+
+        //When (Act)
+        when(list.get(anyInt()))
+                .thenThrow(new RuntimeException("Foo Bar")); //não vai retornar nullo, independente do que for passado aqui;
+
+        //Then (Assert)
+        assertThrows(RuntimeException.class,
+                () -> list.get(anyInt()),
+                () -> "Should have throw an RuntimeException");
     }
 }
