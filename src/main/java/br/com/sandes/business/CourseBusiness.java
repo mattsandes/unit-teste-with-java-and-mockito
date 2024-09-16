@@ -34,4 +34,15 @@ public class CourseBusiness {
 
         return filteredCourses;
     }
+
+    public void deleteCoursesNotRelatedToSpring(String student){
+
+        var allCourses = service.retrieveCourses(student);
+
+        for(String courses: allCourses){
+            if(!courses.contains("Spring")){
+                service.deleteCourse(courses);
+            }
+        }
+    }
 }
